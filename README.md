@@ -46,11 +46,12 @@ alt="МАЙШОП" width="128" height="64"> </a>
 
 
 # <a name="Jenkins">Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/10_da-vasilev_qa-guru-hw25/)</a>
-> <a target="_blank" href="https://jenkins.autotests.cloud/job/C09-MaryMokretsova-unit15/">Ссылка на проект в Jenkins</a>
+> <a target="_blank" href="https://jenkins.autotests.cloud/job/C09-MaryMokretsova-unit24/">Ссылка на проект в Jenkins</a>
 
 ### Для запуска автотестов в Jenkins
 1. Открыть проект
-<img src="/media/screenshots/img1.png">
+
+[//]: # (<img src="/media/screenshots/img1.png">)
 2. Выбрать пункт "Собрать с параметрами"
 <img src="/media/screenshots/img2.png">
 3. В случае необходимости изменить параметры и нажать на кнопку "build"
@@ -60,7 +61,7 @@ alt="МАЙШОП" width="128" height="64"> </a>
 ### Локальный запуск автотестов
 1. Клонируйте репозиторий
 ```ruby
-gh repo clone MaryMokretsova/qa_guru_python_9_15
+gh repo clone MaryMokretsova/qa_guru_python_9_24
 ```
 2. Создайте и активируйте виртуальное окружение
   ```ruby
