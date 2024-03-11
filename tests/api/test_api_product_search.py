@@ -1,7 +1,8 @@
+import pytest
 import allure
 import jsonschema
-from helper.load_schema import load_schema
-from helper.api_requests import api_get
+from my_shop_project_test.helper.load_schema import load_schema
+from my_shop_project_test.helper.api_requests import api_get
 
 
 @allure.epic('API. Search')
@@ -11,19 +12,20 @@ from helper.api_requests import api_get
 @allure.tag('regress', 'api', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'api')
+@pytest.mark.api
 def test_successful_searching_of_product_by_title():
     schema = load_schema('successful_searching_product.json')
 
     with allure.step("Send request for successful search"):
         product_title = 'Python для детей. Самоучитель по программированию'
-        url = f"/search.pl?term={product_title}"
+        url = f"/ajax/search.pl?term={product_title}"
         headers = {"Content-Type": "application/json"}
         result = api_get(url, headers=headers)
 
     with allure.step("Checking the answer"):
         assert result.status_code == 200
         jsonschema.validate(result.json(), schema)
-        assert 'Python для детей' in result.json()['suggest'][0]['value']
+        assert 'python для детей самоучитель по программированию' in result.json()['suggest'][0]['value']
 
 
 @allure.epic('API. Search')
@@ -37,7 +39,7 @@ def test_unsuccessful_searching_of_product_by_title():
 
     with allure.step("Send request for unsuccessful search"):
         product_title = 'asddfgrhtjykykk'
-        url = f"/search.pl?term={product_title}"
+        url = f"/ajax/search.pl?term={product_title}"
         headers = {"Content-Type": "application/json"}
         result = api_get(url, headers=headers)
 

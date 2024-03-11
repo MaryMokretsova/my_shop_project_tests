@@ -1,6 +1,7 @@
+import pytest
 import allure
-from pages.main_page import main_page
-from pages.search_page import search_page
+from pages import main_page
+from pages import search_page
 
 
 @allure.epic('WEB.Search Page')
@@ -8,6 +9,7 @@ from pages.search_page import search_page
 @allure.feature("Checking an successful and an unsuccessful search")
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
+@pytest.mark.web
 class TestSearch:
 
     def test_header_search_positive(self):

@@ -1,5 +1,6 @@
+import pytest
 import allure
-from pages.main_page import main_page
+from pages import main_page
 
 
 @allure.epic('WEB.Menu')
@@ -7,6 +8,7 @@ from pages.main_page import main_page
 @allure.feature("Checking menu items")
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
+@pytest.mark.web
 class TestMenu:
 
     def test_main_menu(self):
@@ -18,4 +20,3 @@ class TestMenu:
             main_page.assert_body_main_menu()
         with allure.step("Checking third level menu items"):
             main_page.assert_footer_main_menu()
-            

@@ -1,3 +1,4 @@
+import pytest
 import allure
 from pages.favorite_page import favorite_page
 from pages.main_page import main_page
@@ -8,6 +9,7 @@ from pages.main_page import main_page
 @allure.feature("Checking whether a product has been added to favorites")
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
+@pytest.mark.web
 class TestFavorites:
     @allure.title("Adding and removing a book to favorites")
     def test_item_add_and_delete_favorites(self):
@@ -25,4 +27,3 @@ class TestFavorites:
             favorite_page.click_delete_to_favorites()
         with allure.step("Assert text favorites"):
             favorite_page.assert_page_favorites()
-            

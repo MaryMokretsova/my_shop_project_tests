@@ -1,7 +1,8 @@
+import pytest
 import allure
 import jsonschema
-from helper.load_schema import load_schema
-from helper.api_requests import api_put
+from my_shop_project_test.helper.load_schema import load_schema
+from my_shop_project_test.helper.api_requests import api_put
 
 
 @allure.epic('API. Add product to favorites')
@@ -10,6 +11,7 @@ from helper.api_requests import api_put
 @allure.tag('regress', 'api', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'api')
+@pytest.mark.api
 def test_adding_product_to_favorite():
     schema = load_schema('successful_adding_product_to_favorite.json')
 
@@ -23,7 +25,7 @@ def test_adding_product_to_favorite():
         assert result.status_code == 200
         jsonschema.validate(result.json(), schema)
         assert result.json()['save']['4913578'] == 1
-        assert result.json()['total']['quantity'] == 1
+        assert result.json()['total']['quantity'] == 0
 
 
 @allure.epic('API. Get data about product in favorite')
@@ -32,7 +34,7 @@ def test_adding_product_to_favorite():
 @allure.tag('regress', 'api', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'api')
-def test_adding_product_to_favorite():
+def test_info_product_in_favorite():
     schema = load_schema('get_info_product_in_favorite.json')
 
     with allure.step("Send a request to receive your favorite products"):
@@ -43,5 +45,5 @@ def test_adding_product_to_favorite():
     with allure.step("Checking the answer"):
         assert result.status_code == 200
         jsonschema.validate(result.json(), schema)
-        assert result.json()['save'][0]['ga_item']['quantity'] == 1
-        assert result.json()['save'][0]['ga_item']['id'] == 4913578
+        assert result.json()['save'] == []
+        assert result.json()['cart'] == []

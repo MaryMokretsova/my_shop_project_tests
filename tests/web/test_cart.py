@@ -1,3 +1,4 @@
+import pytest
 import allure
 from pages.cart_page import cart_page
 from pages.main_page import main_page
@@ -8,6 +9,7 @@ from pages.main_page import main_page
 @allure.feature("Checking whether a product has been added to cart")
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
+@pytest.mark.web
 class TestCart:
 
     @allure.title("Adding and removing a book to cart")
@@ -28,4 +30,3 @@ class TestCart:
             cart_page.confirm_clear_cart()
         with allure.step("Assert text cart"):
             cart_page.assert_page_cart()
-            
