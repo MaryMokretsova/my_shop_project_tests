@@ -210,15 +210,9 @@ allure serve allure-results
 
 # <a name="Results">Результаты выполнения тестов</a>
 
-[//]: # (### Пример запуска теста в Browserstack)
-
-[//]: # (<p align="center">)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;  <img src="images/videoMob.gif" alt="video" width="700">&#41;)
-
-[//]: # (</p>)
+<p align="center">
+<img src="/media/screenshots/img7.png" alt="Allure Report" width="750">)
+</p>
 
 ### Пример запуска теста в Selenoid
 
