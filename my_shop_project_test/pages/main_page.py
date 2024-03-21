@@ -4,7 +4,7 @@ from selene import browser, have
 class MainPage:
 
     def open_shop_page(self):
-        browser.open("/")
+        browser.open('/')
         return self
 
     def assert_header_main_menu(self):

@@ -1,7 +1,7 @@
 import pytest
 import allure
-from pages.cart_page import cart_page
-from pages.main_page import main_page
+from my_shop_project_test.pages.cart_page import cart_page
+from my_shop_project_test.pages.main_page import main_page
 
 
 @allure.epic('WEB.Add product to cart')

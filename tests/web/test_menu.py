@@ -1,6 +1,6 @@
 import pytest
 import allure
-from pages import main_page
+from my_shop_project_test.pages import main_page
 
 
 @allure.epic('WEB.Menu')

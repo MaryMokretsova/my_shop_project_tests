@@ -1,7 +1,7 @@
 import pytest
 import allure
-from pages.login_page import login_page
-from pages.main_page import main_page
+from my_shop_project_test.pages import login_page
+from my_shop_project_test.pages.main_page import main_page
 import config
 
 
