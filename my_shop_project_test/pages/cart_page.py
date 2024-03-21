@@ -38,4 +38,4 @@ class CartPage:
         return self
 
 
-cart_page = CartPage()
+cart = CartPage()

@@ -1,7 +1,7 @@
 import pytest
 import allure
-from my_shop_project_test.pages import favorite_page
-from my_shop_project_test.pages.main_page import main_page
+from my_shop_project_test.pages.favorite_page import favorite
+from my_shop_project_test.pages.main_page import main
 
 
 @allure.epic('WEB.Add product to favorites')
@@ -14,16 +14,16 @@ class TestFavorites:
     @allure.title("Adding and removing a book to favorites")
     def test_item_add_and_delete_favorites(self):
         with allure.step("Open marketplace"):
-            main_page.open_shop_page()
+            main.open_shop_page()
         with allure.step("Number book search"):
-            favorite_page.find_item()
+            favorite.find_item()
         with allure.step("Open product page"):
-            favorite_page.open_page_item()
+            favorite.open_page_item()
         with allure.step("Click add to favorites"):
-            favorite_page.click_add_to_favorites()
+            favorite.click_add_to_favorites()
         with allure.step("Open favorites"):
-            favorite_page.open_favorites()
+            favorite.open_favorites()
         with allure.step("Click delete to favorites"):
-            favorite_page.click_delete_to_favorites()
+            favorite.click_delete_to_favorites()
         with allure.step("Assert text favorites"):
-            favorite_page.assert_page_favorites()
+            favorite.assert_page_favorites()

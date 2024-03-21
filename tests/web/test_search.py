@@ -1,7 +1,7 @@
 import pytest
 import allure
-from my_shop_project_test.pages import main_page
-from my_shop_project_test.pages import search_page
+from my_shop_project_test.pages.main_page import main
+from my_shop_project_test.pages.search_page import search
 
 
 @allure.epic('WEB.Search Page')
@@ -14,16 +14,16 @@ class TestSearch:
 
     def test_header_search_positive(self):
         with allure.step("Open marketplace"):
-            main_page.open_shop_page()
+            main.open_shop_page()
         with allure.step("Input text for search"):
-            search_page.header_search('Тетради')
+            search.header_search('Тетради')
         with allure.step("Check the result of an successful search"):
-            search_page.search_result_success('Тетради')
+            search.search_result_success('Тетради')
 
     def test_header_search_negative(self):
         with allure.step("Open marketplace"):
-            main_page.open_shop_page()
+            main.open_shop_page()
         with allure.step("Input text for search"):
-            search_page.header_search('asddfgrhtjykykk')
+            search.header_search('asddfgrhtjykykk')
         with allure.step("Check the result of an unsuccessful search"):
-            search_page.search_result_failure('По вашему запросу ничего не найдено. Возможно, вам понравятся эти ')
+            search.search_result_failure('По вашему запросу ничего не найдено. Возможно, вам понравятся эти ')

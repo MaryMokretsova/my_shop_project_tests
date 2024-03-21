@@ -34,4 +34,4 @@ class FavoritePage:
         return self
 
 
-favorite_page = FavoritePage()
+favorite = FavoritePage()

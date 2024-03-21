@@ -14,4 +14,4 @@ class SearchPage:
         browser.element('[class*="search-type"] [class="search-type__text"]').should(have.text(text))
 
 
-search_page = SearchPage()
+search = SearchPage()

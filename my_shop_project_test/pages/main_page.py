@@ -22,4 +22,4 @@ class MainPage:
         return self
 
 
-main_page = MainPage()
+main = MainPage()

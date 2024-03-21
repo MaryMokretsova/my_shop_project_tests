@@ -1,7 +1,7 @@
 import pytest
 import allure
-from my_shop_project_test.pages.cart_page import cart_page
-from my_shop_project_test.pages.main_page import main_page
+from my_shop_project_test.pages.cart_page import cart
+from my_shop_project_test.pages.main_page import main
 
 
 @allure.epic('WEB.Add product to cart')
@@ -15,18 +15,18 @@ class TestCart:
     @allure.title("Adding and removing a book to cart")
     def test_item_add_and_delete_cart(self):
         with allure.step("Open marketplace"):
-            main_page.open_shop_page()
+            main.open_shop_page()
         with allure.step("Book search"):
-            cart_page.find_item()
+            cart.find_item()
         with allure.step("Open product page"):
-            cart_page.open_page_item()
+            cart.open_page_item()
         with allure.step("Click add to cart"):
-            cart_page.click_add_to_cart()
+            cart.click_add_to_cart()
         with allure.step("Open cart"):
-            cart_page.open_cart()
+            cart.open_cart()
         with allure.step("Clear cart"):
-            cart_page.clear_cart()
+            cart.clear_cart()
         with allure.step("Confirm clear cart"):
-            cart_page.confirm_clear_cart()
+            cart.confirm_clear_cart()
         with allure.step("Assert text cart"):
-            cart_page.assert_page_cart()
+            cart.assert_page_cart()

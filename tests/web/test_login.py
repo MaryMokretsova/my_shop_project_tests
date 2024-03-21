@@ -1,7 +1,7 @@
 import pytest
 import allure
-from my_shop_project_test.pages import login_page
-from my_shop_project_test.pages.main_page import main_page
+from my_shop_project_test.pages.login_page import login
+from my_shop_project_test.pages.main_page import main
 import config
 
 
@@ -11,24 +11,24 @@ import config
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
 @pytest.mark.web
-class TestFavorites:
+class TestLogin:
     @allure.title("Verifying successful user authorization")
     def test_authorization_registered_user(self):
         with allure.step("Open marketplace"):
-            main_page.open_shop_page()
+            main.open_shop_page()
         with allure.step("Open the authorization form"):
-            login_page.open_form()
+            login.open_form()
         with allure.step("Assert name the authorization form"):
-            login_page.assert_name_form('Вход и регистрация')
+            login.assert_name_form('Вход и регистрация')
         with allure.step("Open the authorization form with email"):
-            login_page.log_in_with_password()
+            login.log_in_with_password()
         with allure.step("Filling the authorization form"):
-            login_page.fill_user_email()
-            login_page.fill_password()
+            login.fill_user_email(config.settings.USER_EMAIL)
+            login.fill_password(config.settings.PASSWORD)
         with allure.step("Submit the form"):
-            login_page.submit_the_form()
+            login.submit_the_form()
         with allure.step("Checking that user has been authorized"):
-            login_page.assert_authorization()
+            login.assert_authorization()
 
 
 @allure.epic('WEB.Authorized')
@@ -37,21 +37,21 @@ class TestFavorites:
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
 @pytest.mark.web
-class TestFavorites:
+class TestAuthorization:
     @allure.title("Verifying unsuccessful user authorization")
     def test_authorization_unregistered_user(self):
         with allure.step("Open marketplace"):
-            main_page.open_shop_page()
+            main.open_shop_page()
         with allure.step("Open the authorization form"):
-            login_page.open_form()
+            login.open_form()
         with allure.step("Assert name the authorization form"):
-            login_page.assert_name_form('Вход и регистрация')
+            login.assert_name_form('Вход и регистрация')
         with allure.step("Open the authorization form with email"):
-            login_page.log_in_with_password()
+            login.log_in_with_password()
         with allure.step("Filling the authorization form"):
-            login_page.fill_user_email(config.settings.USER_EMAIL)
-            login_page.fill_password()
+            login.fill_user_email(config.settings.USER_EMAIL)
+            login.fill_password('123')
         with allure.step("Submit the form"):
-            login_page.submit_the_form()
+            login.submit_the_form()
         with allure.step("Assert name the authorization form"):
-            login_page.assert_name_form('Вход и регистрация')
+            login.assert_name_form('Вход и регистрация')

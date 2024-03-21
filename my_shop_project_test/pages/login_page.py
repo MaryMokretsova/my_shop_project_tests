@@ -26,7 +26,7 @@ class LoginPage:
 
     def submit_the_form(self):
         browser.element(
-            '[class*="_button_vas41_1 _is-large_vas41_100 _is-white-violet_vas41_246 _is-border_vas41_254 nowrap _is-expanded_vas41_194"]').click()
+            '[class*="_button_vas41_1 _is-large_vas41_100 _is-basic_vas41_174 nowrap _is-expanded_vas41_194"]').type('Войти').press_enter()
         return self
 
     def assert_authorization(self):
@@ -34,4 +34,4 @@ class LoginPage:
         return self
 
 
-login_page = LoginPage()
+login = LoginPage()
