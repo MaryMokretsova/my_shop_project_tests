@@ -11,7 +11,7 @@ import config
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
 @pytest.mark.web
-class TestLogin:
+class TestAuthorization:
     @allure.title("Verifying successful user authorization")
     def test_authorization_registered_user(self):
         with allure.step("Open marketplace"):
@@ -30,14 +30,6 @@ class TestLogin:
         with allure.step("Checking that user has been authorized"):
             login.assert_authorization()
 
-
-@allure.epic('WEB.Authorized')
-@allure.label("owner", "MaryMokretsova")
-@allure.feature("Checking the authorization of the user")
-@allure.tag('regress', 'web', 'normal')
-@allure.severity('normal')
-@pytest.mark.web
-class TestAuthorization:
     @allure.title("Verifying unsuccessful user authorization")
     def test_authorization_unregistered_user(self):
         with allure.step("Open marketplace"):
