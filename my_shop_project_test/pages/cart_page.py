@@ -1,41 +1,49 @@
-from selene import browser, have
+from selene import browser, have, by
+import allure
 
 
 class CartPage:
+    with allure.step("Book search"):
+        def find_item(self):
+            browser.element(".header__search input").type(
+                "Complete Brambly Hedge"
+            ).press_enter()
+            return self
 
-    def find_item(self):
-        browser.element("[placeholder='Поиск на Майшоп']").type(
-            "Complete Brambly Hedge"
-        ).press_enter()
-        return self
+    with allure.step("Open product page"):
+        def open_page_item(self):
+            browser.element('.item .img').click()
+            return self
 
-    def open_page_item(self):
-        browser.element('[class="img"]').click()
-        return self
+    with allure.step("Click add to cart"):
+        def click_add_to_cart(self):
+            browser.element('.form-control>.field.flex-grow>button').click()
+            browser.element('[href="/my/cart"] .badge').should(have.exact_text('1'))
+            return self
 
-    def click_add_to_cart(self):
-        browser.element('[class*="field flex-grow"] [class*="_button_vas"]').click()
-        return self
+    with allure.step("Open cart"):
+        def open_cart(self):
+            browser.element('[href="/my/cart"]').click()
+            return self
 
-    def open_cart(self):
-        browser.element('[href*="/my/cart"]').click()
-        return self
+    with allure.step("Clear cart"):
+        def clear_cart(self):
+            browser.element('.cart-item .icon__delete').click()
+            return self
 
-    def clear_cart(self):
-        browser.element('[class*="icon icon__delete"]').click()
-        return self
+    with allure.step("Confirm clear cart"):
+        def confirm_clear_cart(self):
+            browser.element(
+                ' .popup-modal .cart-confirm__btns'
+            ).element(by.text('РЈРґР°Р»РёС‚СЊ')).click()
+            return self
 
-    def confirm_clear_cart(self):
-        browser.element(
-            ' [class*="cart-confirm__btns"] [class*="_button_vas41_1 _is-medium_vas41_75 _is-basic_vas41_174 nowrap"]'
-        ).click()
-        return self
-
-    def assert_page_cart(self):
-        browser.element('[class*="text-20"]').should(
-            have.text('Ваша корзина пуста')
-        )
-        return self
+    with allure.step("Assert text cart"):
+        def assert_page_cart(self):
+            browser.element('.wrap h3').should(
+                have.text('Р’Р°С€Р° РєРѕСЂР·РёРЅР° РїСѓСЃС‚Р°')
+            )
+            return self
 
 
 cart = CartPage()

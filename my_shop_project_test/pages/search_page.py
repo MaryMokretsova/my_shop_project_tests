@@ -1,17 +1,23 @@
+import allure
 from selene import browser, have
-import time
 
 
 class SearchPage:
+    with allure.step("Input text for search positive"):
+        def header_search_positive(self):
+            browser.element('.header__search input').type('Тетради').press_enter()
 
-    def header_search(self, text):
-        browser.element('[class*="_input_vn1tc_35"]').type(text).press_enter()
+    with allure.step("Check the result of an successful search"):
+        def search_result_success(self):
+            browser.element('.h1 .title').should(have.text('Тетради'))
 
-    def search_result_success(self, text):
-        browser.element('[class*="h1"] [class="title"]').should(have.text(text))
+    with allure.step("Input text for search negative"):
+        def header_search_negative(self):
+            browser.element('.header__search input').type('asddfgrhtjykykk').press_enter()
 
-    def search_result_failure(self, text):
-        browser.element('[class*="search-type"] [class="search-type__text"]').should(have.text(text))
+    with allure.step("Check the result of an unsuccessful search"):
+        def search_result_failure(self):
+            browser.element('.search-type__text').should(have.text('По вашему запросу ничего не найдено. Возможно, вам понравятся эти '))
 
 
 search = SearchPage()

@@ -13,17 +13,12 @@ from my_shop_project_test.pages.main_page import main
 class TestFavorites:
     @allure.title("Adding and removing a book to favorites")
     def test_item_add_and_delete_favorites(self):
-        with allure.step("Open marketplace"):
-            main.open_shop_page()
-        with allure.step("Number book search"):
-            favorite.find_item()
-        with allure.step("Open product page"):
-            favorite.open_page_item()
-        with allure.step("Click add to favorites"):
-            favorite.click_add_to_favorites()
-        with allure.step("Open favorites"):
-            favorite.open_favorites()
-        with allure.step("Click delete to favorites"):
-            favorite.click_delete_to_favorites()
-        with allure.step("Assert text favorites"):
-            favorite.assert_page_favorites()
+        main.open_shop_page()
+
+        favorite.find_item()
+        favorite.open_page_item()
+        favorite.click_add_to_favorites()
+        favorite.open_favorites()
+        favorite.click_delete_to_favorites()
+
+        favorite.assert_page_favorites()

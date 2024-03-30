@@ -14,19 +14,13 @@ class TestCart:
 
     @allure.title("Adding and removing a book to cart")
     def test_item_add_and_delete_cart(self):
-        with allure.step("Open marketplace"):
-            main.open_shop_page()
-        with allure.step("Book search"):
-            cart.find_item()
-        with allure.step("Open product page"):
-            cart.open_page_item()
-        with allure.step("Click add to cart"):
-            cart.click_add_to_cart()
-        with allure.step("Open cart"):
-            cart.open_cart()
-        with allure.step("Clear cart"):
-            cart.clear_cart()
-        with allure.step("Confirm clear cart"):
-            cart.confirm_clear_cart()
-        with allure.step("Assert text cart"):
-            cart.assert_page_cart()
+        main.open_shop_page()
+
+        cart.find_item()
+        cart.open_page_item()
+        cart.click_add_to_cart()
+        cart.open_cart()
+        cart.clear_cart()
+        cart.confirm_clear_cart()
+
+        cart.assert_page_cart()

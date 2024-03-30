@@ -2,28 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "save": {
-      "type": "object",
-      "properties": {
-        "4913578": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "4913578"
-      ]
-    },
-    "cart": {
-      "type": "object",
-      "properties": {
-        "4875742": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "4875742"
-      ]
-    },
     "total": {
       "type": "object",
       "properties": {
@@ -38,11 +16,26 @@
         "time",
         "quantity"
       ]
+    },
+    "cart": {
+      "type": "object",
+      "properties": {}
+    },
+    "save": {
+      "type": "object",
+      "properties": {
+        "4913578": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "4913578"
+      ]
     }
   },
   "required": [
-    "save",
+    "total",
     "cart",
-    "total"
+    "save"
   ]
 }

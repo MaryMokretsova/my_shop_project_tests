@@ -13,17 +13,11 @@ from my_shop_project_test.pages.search_page import search
 class TestSearch:
 
     def test_header_search_positive(self):
-        with allure.step("Open marketplace"):
-            main.open_shop_page()
-        with allure.step("Input text for search"):
-            search.header_search('Тетради')
-        with allure.step("Check the result of an successful search"):
-            search.search_result_success('Тетради')
+        main.open_shop_page()
+        search.header_search_positive()
+        search.search_result_success()
 
     def test_header_search_negative(self):
-        with allure.step("Open marketplace"):
-            main.open_shop_page()
-        with allure.step("Input text for search"):
-            search.header_search('asddfgrhtjykykk')
-        with allure.step("Check the result of an unsuccessful search"):
-            search.search_result_failure('По вашему запросу ничего не найдено. Возможно, вам понравятся эти ')
+        main.open_shop_page()
+        search.header_search_negative()
+        search.search_result_failure()

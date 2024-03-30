@@ -1,37 +1,56 @@
-from selene import browser, have, be
+import allure
+from selene import browser, have, be, by
+import config
 
 
 class LoginPage:
+    with allure.step("Open the authorization form"):
+        def open_form(self):
+            browser.element('.tabs-button[href="#"]').click()
+            return self
 
-    def open_form(self):
-        browser.element('[href*="#"]').click()
+    with allure.step("Assert name the authorization form"):
+        def assert_name_form(self):
+            browser.element('.popup-modal__window__header').should(have.text('Вход и регистрация'))
+            return self
+
+    with allure.step("Open the authorization form with email"):
+        def log_in_with_password(self):
+            browser.element('.popup-modal__window').element(by.text('Войти по паролю')).click()
+            return self
+
+    with allure.step("Filling the authorization form email"):
+        def fill_user_email(self):
+            browser.element('#email').should(be.blank).type(config.settings.USER_EMAIL)
+            return self
+
+    with allure.step("Filling the authorization form positive"):
+        def fill_password_positive(self):
+            browser.element('#pass').type(config.settings.PASSWORD)
+            return self
+
+    with allure.step("Filling the authorization form password"):
+        def fill_password_negative(self):
+            browser.element('#pass').type('123')
+            return self
+
+    with allure.step("Submit the form"):
+        def submit_the_form(self):
+            browser.element('.popup-modal__window').element(by.text('Войти')).click()
+            return self
+
+    def repeat_submit_the_form(self):
+        self.open_form()
+        self.log_in_with_password()
+        self.fill_user_email(config.settings.USER_EMAIL)
+        self.fill_password(config.settings.PASSWORD)
+        self.submit_the_form()
         return self
 
-    def assert_name_form(self, value):
-        browser.element('[class="h2"]').should(have.text(value))
-        return self
-
-    def log_in_with_password(self):
-        browser.element(
-            '[class*="_button_vas41_1 _is-large_vas41_100 _is-white-violet_vas41_246 _is-border_vas41_254 nowrap _is-expanded_vas41_194"]').click()
-        return self
-
-    def fill_user_email(self, value):
-        browser.element('[type="email"]').should(be.blank).type(value)
-        return self
-
-    def fill_password(self, value):
-        browser.element('[type="password"]').should(be.blank).type(value)
-        return self
-
-    def submit_the_form(self):
-        browser.element(
-            '[class*="_button_vas41_1 _is-large_vas41_100 _is-basic_vas41_174 nowrap _is-expanded_vas41_194"]').type('Войти').press_enter()
-        return self
-
-    def assert_authorization(self):
-        browser.element('.otp__h1').should(have.text('Мой кабинет'))
-        return self
+    with allure.step("Checking that user has been authorized"):
+        def assert_authorization(self):
+            browser.element('[href="#"] .no-tablet').should(have.text('Мой кабинет'))
+            return self
 
 
 login = LoginPage()
