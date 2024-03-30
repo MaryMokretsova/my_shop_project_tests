@@ -11,6 +11,7 @@ from my_shop_project_test.pages.main_page import main
 @pytest.mark.web
 class TestMenu:
 
+    @allure.title("Check header, body and footer menu")
     def test_main_menu(self):
         main.open_shop_page()
 

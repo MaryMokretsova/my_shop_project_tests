@@ -12,6 +12,7 @@ import config
 @allure.severity('normal')
 @pytest.mark.web
 class TestAuthorization:
+
     @allure.title("Verifying successful user authorization")
     def test_authorization_registered_user(self):
         main.open_shop_page()

@@ -12,11 +12,13 @@ from my_shop_project_test.pages.search_page import search
 @pytest.mark.web
 class TestSearch:
 
+    @allure.title("Ckeck with positive search")
     def test_header_search_positive(self):
         main.open_shop_page()
         search.header_search_positive()
         search.search_result_success()
 
+    @allure.title("Ckeck with negative search")
     def test_header_search_negative(self):
         main.open_shop_page()
         search.header_search_negative()

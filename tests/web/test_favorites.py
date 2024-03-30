@@ -11,6 +11,7 @@ from my_shop_project_test.pages.main_page import main
 @allure.severity('normal')
 @pytest.mark.web
 class TestFavorites:
+
     @allure.title("Adding and removing a book to favorites")
     def test_item_add_and_delete_favorites(self):
         main.open_shop_page()
