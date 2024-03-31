@@ -43,7 +43,7 @@ class LoginPage:
         self.open_form()
         self.log_in_with_password()
         self.fill_user_email()
-        self.fill_password()
+        self.fill_password_positive()
         self.submit_the_form()
         return self
 
