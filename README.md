@@ -4,9 +4,9 @@
 <img src="https://s.rbk.ru/v1_companies_s3/resized/960xH/media/trademarks/91cbd2c0-7f6c-48e5-ba52-f72f348a2f65.jpg" 
 alt="МАЙШОП" width="128" height="64"> </a> 
 </p></h1>
-
+ 
 <!-- Тест кейсы -->
-
+----
 ## Автоматизировано тестирование функционала:
 
 ## UI-тесты
@@ -23,6 +23,7 @@ alt="МАЙШОП" width="128" height="64"> </a>
 * Добавление книги в корзину
 * Добавление книги в избранное
 
+----
 # <a name="Technology">Технологии и инструменты</a>
 
 <p  align="center">
@@ -40,29 +41,29 @@ alt="МАЙШОП" width="128" height="64"> </a>
   <code><img width="5%" title="Telegram" src="media/logo/tg.png"></code>
 </p>
 
-
+----
 В данном проекте автотесты написаны на **Python** с использованием фреймворка **Pytest** и популярных библиотек *
 *Selene, WebDriver-Manager, Selenium**.
 Из **Jenkins** выполняется запуск тестов.
 **Selenoid** используется для запуска браузеров в контейнерах **Docker**.
 **Allure Report, Telegram Bot** используются для визуализации результатов тестирования.
 
+----
 # <a name="Jenkins">Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/10_da-vasilev_qa-guru-hw25/)</a>
 
 > <a target="_blank" href="https://jenkins.autotests.cloud/job/C09-MaryMokretsova-unit24/">Ссылка на проект в
 > Jenkins</a>
 
+----
 ### Для запуска автотестов в Jenkins
-
 1. Открыть проект
-
-[//]: # (<img src="/media/screenshots/img1.png">)
-
+<img src="/media/screenshots/img1.png">
 2. Выбрать пункт "Собрать с параметрами"
-   <img src="/media/screenshots/img2.png">
+<img src="/media/screenshots/img2.png">
 3. В случае необходимости изменить параметры и нажать на кнопку "build"
-   <img src="/media/screenshots/img3.png">
+<img src="/media/screenshots/img3.png">
 
+----
 ### Локальный запуск автотестов
 
 1. Клонируйте репозиторий
@@ -109,109 +110,82 @@ allure serve allure-results
 >- <code><strong>*SUITES*</strong></code> - отображает распределение результатов тестов по тестовым наборам
 >- <code><strong>*CATEGORIES*</strong></code> - отображает распределение неуспешно прошедших тестов по видам дефектов
 
+----
 Результат запуска сборки можно посмотреть в отчёте Allure
 
-При первом запуске не все селекторы отработали корректно
+[//]: # (При первом запуске не все селекторы отработали корректно)
+
+
+#### Общие результаты
 <p align="center">
 <img src="/media/screenshots/img4.png" alt="Allure Report" width="750">)
 </p>
-При втором запуске тесты прошли успешно
+
+#### Список тест кейсов
 <p align="center">
 <img src="/media/screenshots/img5.png" alt="Allure Report" width="750">)
 </p>
 
-[//]: # (### Список тестов c описанием шагов и визуализацией результатов)
+#### Пример отчета о прохождении ui-теста
+<p align="center">
+<img src="/media/screenshots/img6.png" alt="Allure Report" width="750">)
+</p>
 
-[//]: # (На данной странице представляется стандартное распределение выполнявшихся тестов по тестовым наборам или классам, в)
+#### Пример отчета о прохождении api-теста
+<p align="center">
+<img src="/media/screenshots/img7.png" alt="Allure Report" width="750">)
+</p>
 
-[//]: # (которых находятся тестовые методы.)
+----
 
-
-[//]: # ()
-
-[//]: # (# <a name="AllureTestOps">Интеграция с [Allure TestOps]&#40;https://allure.autotests.cloud/project/1203/&#41;</a>)
-
-[//]: # ()
-
-[//]: # (### Основной дашборд)
-
-[//]: # (<p align="center">)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;  <img src="images/allureTestOPS dashboards.png" alt="dashboards" width="650">&#41;)
-
-[//]: # (</p>)
-
-[//]: # ()
-
-[//]: # (### Дашборд по разным типам тестов)
-
-[//]: # (<p align="center">)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;  <img src="images/allureTestOPS dashboards test types.png" alt="dashboards test types" width="650">&#41;)
-
-[//]: # (</p>)
-
-[//]: # ()
-
-[//]: # (### Запуски)
-
-[//]: # (<p align="center">)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;  <img src="images/allureTestOPS launches.png" alt="launches" width="650">&#41;)
-
-[//]: # (</p>)
-
-[//]: # ()
-
-[//]: # (### Результат запуска)
-
-[//]: # (<p align="center">)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;  <img src="images/allureTestOPS launch.png" alt="launch" width="750">&#41;)
-
-[//]: # (</p>)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;### Тест-кейсы&#41;)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;<p align="center">&#41;)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;  <img src="images/Test cases.png" alt="test cases" width="750">&#41;)
-
-[//]: # (</p>)
-
-[//]: # (### Дефекты)
-
-[//]: # (<p align="center">)
-
-[//]: # ()
-
-[//]: # ([//]: # &#40;  <img src="images/testOps_defect.png" alt="defects" width="750">&#41;)
-
-[//]: # (</p>)
+----
+### Полная статистика по прохождению тестпланов, отчёты и приложения к ним хранятся в Allure TestOps
+> <a target="_blank" href="https://allure.autotests.cloud/project/4113/dashboards">Ссылка на проект в AllureTestOps</a> (запрос доступа `admin@qa.guru`)
 
 
-[//]: # ()
+#### Тест-планы проекта
+<p align="center">
+<img src="/media/screenshots/img8.png" alt="Allure Report" width="750">)
+</p>
 
-<!-- # <a name="Jira">Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1165)</a> -->
+#### Общий список всех кейсов, имеющихся в системе (без разделения по тест-планам и виду выполнения тестирования)
+<p align="center">
+<img src="/media/screenshots/img9.png" alt="Allure Report" width="750">)
+</p>
+
+#### Пример отчёта выполнения одного из автотестов
+<p align="center">
+<img src="/media/screenshots/img10.png" alt="Allure Report" width="750">)
+</p>
+
+#### Тестовые артефакты
+<p align="center">
+<img src="/media/screenshots/img11.png" alt="Allure Report" width="750">)
+</p>
+
+#### Пример dashboard с общими результатами тестирования
+<p align="center">
+<img src="/media/screenshots/img12.png" alt="Allure Report" width="750">)
+</p>
+
+#### История запуска тестовых наборов
+<p align="center">
+<img src="/media/screenshots/img13.png" alt="Allure Report" width="750">)
+</p>
+
+----
+### Интеграция с Jira
+> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1145">Ссылка на проект в Jira</a>
+
+<p align="center">
+<img src="/media/screenshots/img14.png" alt="Allure Report" width="750">)
+</p>
+----
 
 # <a name="Results">Результаты выполнения тестов</a>
 
 <p align="center">
-<img src="/media/screenshots/img7.png" alt="Allure Report" width="750">)
+<img src="/media/screenshots/img15.png" alt="Allure Report" width="750">)
 </p>
 
 ### Пример запуска теста в Selenoid
@@ -225,6 +199,6 @@ allure serve allure-results
 
 <p align="center">
 
-<img src="/media/screenshots/img6.jpeg" alt="Telegram" width="300"></a>
+<img src="/media/screenshots/img16.jpeg" alt="Telegram" width="300"></a>
 </p>
 
