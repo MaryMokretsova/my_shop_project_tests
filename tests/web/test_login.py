@@ -23,6 +23,7 @@ class TestAuthorization:
         login.fill_user_email()
         login.fill_password_positive()
         login.submit_the_form()
+        login.repeat_submit_the_form()
         login.assert_authorization()
 
     @allure.title("Verifying unsuccessful user authorization")

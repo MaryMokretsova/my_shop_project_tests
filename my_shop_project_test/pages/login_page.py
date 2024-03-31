@@ -42,8 +42,8 @@ class LoginPage:
     def repeat_submit_the_form(self):
         self.open_form()
         self.log_in_with_password()
-        self.fill_user_email(config.settings.USER_EMAIL)
-        self.fill_password(config.settings.PASSWORD)
+        self.fill_user_email()
+        self.fill_password()
         self.submit_the_form()
         return self
 

@@ -35,13 +35,13 @@ class CartPage:
         def confirm_clear_cart(self):
             browser.element(
                 ' .popup-modal .cart-confirm__btns'
-            ).element(by.text('РЈРґР°Р»РёС‚СЊ')).click()
+            ).element(by.text('Удалить')).click()
             return self
 
     with allure.step("Assert text cart"):
         def assert_page_cart(self):
             browser.element('.wrap h3').should(
-                have.text('Р’Р°С€Р° РєРѕСЂР·РёРЅР° РїСѓСЃС‚Р°')
+                have.text('Ваша корзина пуста')
             )
             return self
 
