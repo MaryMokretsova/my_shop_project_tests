@@ -54,7 +54,6 @@ alt="МАЙШОП" width="128" height="64"> </a>
 > <a target="_blank" href="https://jenkins.autotests.cloud/job/C09-MaryMokretsova-unit24/">Ссылка на проект в
 > Jenkins</a>
 
-----
 ### Для запуска автотестов в Jenkins
 1. Открыть проект
 <img src="/media/screenshots/img1.png">
@@ -63,7 +62,7 @@ alt="МАЙШОП" width="128" height="64"> </a>
 3. В случае необходимости изменить параметры и нажать на кнопку "build"
 <img src="/media/screenshots/img3.png">
 
-----
+
 ### Локальный запуск автотестов
 
 1. Клонируйте репозиторий
@@ -96,6 +95,8 @@ gh repo clone MaryMokretsova/my_shop_project_tests
 ```ruby
 allure serve allure-results
 ``` 
+
+----
 
 # <a name="AllureReport">Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/10_da-vasilev_qa-guru-hw25/23/allure/)</a>
 
@@ -138,7 +139,6 @@ allure serve allure-results
 
 ----
 
-----
 ### Полная статистика по прохождению тестпланов, отчёты и приложения к ним хранятся в Allure TestOps
 > <a target="_blank" href="https://allure.autotests.cloud/project/4113/dashboards">Ссылка на проект в AllureTestOps</a> (запрос доступа `admin@qa.guru`)
 
