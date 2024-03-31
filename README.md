@@ -111,7 +111,7 @@ allure serve allure-results
 >- <code><strong>*SUITES*</strong></code> - отображает распределение результатов тестов по тестовым наборам
 >- <code><strong>*CATEGORIES*</strong></code> - отображает распределение неуспешно прошедших тестов по видам дефектов
 
-----
+
 Результат запуска сборки можно посмотреть в отчёте Allure
 
 [//]: # (При первом запуске не все селекторы отработали корректно)
@@ -182,10 +182,11 @@ allure serve allure-results
 </p>
 ----
 
-# <a name="Results">Результаты выполнения тестов</a>
+### Уведомления в Telegram
 
 <p align="center">
-<img src="/media/screenshots/img15.png" alt="Allure Report" width="750">)
+
+<img src="/media/screenshots/img15.png" alt="Telegram" width="300"></a>
 </p>
 
 ### Пример запуска теста в Selenoid
@@ -195,10 +196,4 @@ allure serve allure-results
 <img src="/media/screenshots/test.gif" alt="Test example">
 </p>
 
-### Уведомления в Telegram
-
-<p align="center">
-
-<img src="/media/screenshots/img16.jpeg" alt="Telegram" width="300"></a>
-</p>
 
